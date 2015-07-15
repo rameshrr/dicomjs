@@ -1,0 +1,16 @@
+{
+  "name": "dicomjs",
+  "version": "1.0.0",
+  "description": "Dicom Parser for Node.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "test unit/index.js"
+  },
+  "keywords": [
+    "dicom"
+  ],
+  "author": "Ramesh R",
+  "license": "MIT",
+  "dependencies": {
+  }
+}
