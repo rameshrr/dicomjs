@@ -7,7 +7,7 @@
  * ----------------------------------------------------------------------
  */
 
-var lib = require('./lib');
+var lib = require(__dirname + '/lib');
 
 module.exports = {
     parse: lib.parse
