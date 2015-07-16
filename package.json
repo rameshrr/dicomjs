@@ -1,14 +1,20 @@
 {
   "name": "dicomjs",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Dicom Parser for Node.js",
   "main": "index.js",
   "scripts": {
-    "test": "test unit/index.js"
+    "test": "node test/index.js"
   },
   "keywords": [
-    "dicom"
+    "dicom",
+    "pacs",
+    "dicomjs"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rameshrr/dicomjs"
+  },
   "author": "Ramesh R",
   "license": "MIT",
   "dependencies": {
