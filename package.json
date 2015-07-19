@@ -1,6 +1,6 @@
 {
   "name": "dicomjs",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Dicom Parser for Node.js",
   "main": "index.js",
   "scripts": {
