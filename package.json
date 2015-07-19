@@ -1,6 +1,6 @@
 {
   "name": "dicomjs",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Dicom Parser for Node.js",
   "main": "index.js",
   "scripts": {
@@ -9,7 +9,10 @@
   "keywords": [
     "dicom",
     "pacs",
-    "dicomjs"
+    "dicomjs",
+    "dicom parser",
+    "dicom reader",
+    "node dicom"
   ],
   "repository": {
     "type": "git",

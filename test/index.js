@@ -7,18 +7,18 @@
  * ----------------------------------------------------------------------
  */
 
-var dicom = require('../index'),
+var dicomjs = require('../index'),
     assert = require('assert'),
     fs = require('fs'),
     path = require('path'),
 //sampleDcmPath = 'samples/CR-MONO1-10-chest'
 //sampleDcmPath = 'samples/DISCIMG/IMAGES/CRIMAGEA'
-//    sampleDcmPath = 'samples/DISCIMG/IMAGES/DXIMAGEA'A'
-    sampleDcmPath = 'samples/CT-MONO2-16-ort' /// Implicit VR
+    sampleDcmPath = 'samples/DISCIMG/IMAGES/DXIMAGEA'
+    //sampleDcmPath = 'samples/CT-MONO2-16-ort' /// Implicit VR
     ;
 
 fs.readFile(path.join(__dirname, sampleDcmPath), function (err, buffer) {
-    dicom.parse(buffer, function (err, dcmData) {
+    dicomjs.parse(buffer, function (err, dcmData) {
         //console.log(err);
 
         if (!err) {

@@ -8,10 +8,10 @@ install via [NPM](https://www.npmjs.com/):
 # Usage
 
 ```javascript
-var dicom = require('dicomjs');
+var dicomjs = require('dicomjs');
 
 fs.readFile(sample_file_path, function (err, buffer) {
-    dicom.parse(buffer, function (err, dcmData) {
+    dicomjs.parse(buffer, function (err, dcmData) {
         /// Shows list of elements
 
         if (!err) {
