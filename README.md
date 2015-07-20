@@ -1,4 +1,4 @@
-# dicomjs (Alpha) - Work in progress
+# dicomjs (Alpha)
 Nodejs library for DICOM parsing
 
 # Installation
@@ -28,3 +28,11 @@ fs.readFile(sample_file_path, function (err, buffer) {
     });
 });
 ```
+
+
+# Contributions
+Contributions are welcome
+    
+# Issues 
+Please file issues [here](https://github.com/rameshrr/dicomjs/issues):
+    
