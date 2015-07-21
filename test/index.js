@@ -14,8 +14,9 @@ var dicomjs = require('../index'),
 //sampleDcmPath = 'samples/CR-MONO1-10-chest'
 //sampleDcmPath = 'samples/DISCIMG/IMAGES/CRIMAGEA'
 //    sampleDcmPath = 'samples/DISCIMG/IMAGES/DXIMAGEA'
-//    sampleDcmPath = 'samples/big/000000000005A3D8'
-sampleDcmPath = 'samples/big/I0010001'
+//    sampleDcmPath = 'samples/MR-MONO2-12-shoulder'/// PixelData:OB
+    sampleDcmPath = '../../big/000000000005A3D8'/// PixelData:OB
+//sampleDcmPath = '../../big/I0010001'
 //sampleDcmPath = 'samples/CT-MONO2-16-ort' /// Implicit VR
     ;
 
