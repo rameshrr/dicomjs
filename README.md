@@ -27,7 +27,7 @@ fs.readFile(sample_file_path, function (err, buffer) {
         }
 
         /// Reading patient name
-        var patientName = dcmData.dataset[''00100010].value;
+        var patientName = dcmData.dataset['00100010'].value;
 
         /// Reading pixel data
         var pixelData = dcmData.pixelData;
@@ -39,7 +39,7 @@ fs.readFile(sample_file_path, function (err, buffer) {
 ## Reading patient name
 ```javascript
 ///
-var patientName = dcmData.dataset[''00100010].value;
+var patientName = dcmData.dataset['00100010'].value;
 ///
 ```
 
