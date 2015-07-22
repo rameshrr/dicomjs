@@ -44,17 +44,15 @@ fs.readFile(sample_file_path, function (err, buffer) {
             }
 
             for (var key in dcmData.dataset) {
-                for (var key in dcmData.dataset) {
 
-                    if(dcmData.dataset[key].isSequence) {
-                        /// TODO: Parse sequence here
-                        console.log('   tag: ', key, ', Sequence: Yes');
-                    } else if(dcmData.dataset[key].isPixelData) {
-                        /// TODO: Handle PixelData here
-                        console.log('   tag: ', key, ', PixelData: Yes');
-                    } else {
-                        console.log('   tag: ', key, ', value: ', dcmData.dataset[key].value);
-                    }
+                if(dcmData.dataset[key].isSequence) {
+                    /// TODO: Parse sequence here
+                    console.log('   tag: ', key, ', Sequence: Yes');
+                } else if(dcmData.dataset[key].isPixelData) {
+                    /// TODO: Handle PixelData here
+                    console.log('   tag: ', key, ', PixelData: Yes');
+                } else {
+                    console.log('   tag: ', key, ', value: ', dcmData.dataset[key].value);
                 }
             }
 
@@ -74,16 +72,16 @@ fs.readFile(sample_file_path, function (err, buffer) {
 # Documentation
 ### Reading patient name
 ```javascript
-///
+
 var patientName = dcmData.dataset['00100010'].value;
-///
+
 ```
 
 ### Reading pixel data
 ```javascript
-///
+
 var pixelData = dcmData.pixelData;
-///
+
 ```
 
 
