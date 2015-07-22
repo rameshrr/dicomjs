@@ -14,8 +14,8 @@ var dicomjs = require('../index'),
 //sampleDcmPath = 'samples/CR-MONO1-10-chest'
 //sampleDcmPath = 'samples/DISCIMG/IMAGES/CRIMAGEA'
 //    sampleDcmPath = 'samples/DISCIMG/IMAGES/DXIMAGEA'
-    sampleDcmPath = 'samples/MR-MONO2-12-shoulder'/// PixelData:OB
-//    sampleDcmPath = '../../big/000000000005A3D8'/// PixelData:OB
+//    sampleDcmPath = 'samples/MR-MONO2-12-shoulder'/// PixelData:OB
+    sampleDcmPath = '../../big/000000000005A3D8'/// PixelData:OB
 //sampleDcmPath = '../../big/I0010001'
 //sampleDcmPath = 'samples/CT-MONO2-16-ort' /// Implicit VR
     ;
@@ -23,7 +23,10 @@ var dicomjs = require('../index'),
 fs.readFile(path.join(__dirname, sampleDcmPath), function (err, buffer) {
     console.time('Process_Time');
     dicomjs.parse(buffer, function (err, dcmData) {
-        //console.log(err);
+        if(err) {
+            console.log(err);
+        }
+
         console.timeEnd('Process_Time');
         console.time('Process_Time2');
 
@@ -36,7 +39,13 @@ fs.readFile(path.join(__dirname, sampleDcmPath), function (err, buffer) {
 
             console.log('Standard elements..');
             for (var key in dcmData.dataset) {
-                console.log('   tag: ', key, ', value: ', dcmData.dataset[key].value);
+                if(dcmData.dataset[key].isSequence) {
+                    console.log('   tag: ', key, ', Sequence: Yes');
+                } else if(dcmData.dataset[key].isPixelData) {
+                    console.log('   tag: ', key, ', PixelData: Yes');
+                } else {
+                    console.log('   tag: ', key, ', value: ', dcmData.dataset[key].value);
+                }
             }
 
             console.log('Parsing complete..');
@@ -45,4 +54,11 @@ fs.readFile(path.join(__dirname, sampleDcmPath), function (err, buffer) {
         console.timeEnd('Process_Time2');
         assert.ok(err == null, 'Parsed Results');
     });
+});
+
+dicomjs.parseFile(path.join(__dirname, sampleDcmPath), function (err, dcmData) {
+    console.log('Parsing file complete..');
+
+    var patientName = dcmData.dataset['00100010'].value;
+    assert.ok(err == null, 'Parsed Results');
 });

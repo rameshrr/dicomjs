@@ -10,5 +10,6 @@
 var lib = require(__dirname + '/lib');
 
 module.exports = {
-    parse: lib.parse
+    parse: lib.parse,
+    parseFile: lib.parseFile
 };
